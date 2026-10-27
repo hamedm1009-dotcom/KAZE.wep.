@@ -1,0 +1,10 @@
+{
+  "name": "kaze-store-phase3",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "description": "KAZE storefront static UI and Cloudflare Pages Functions",
+  "dependencies": {
+    "jose": "^6.1.0"
+  }
+}
