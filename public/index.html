@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#202720">
+  <meta name="description" content="KAZE — واجهة متجر ملابس تجريبية قيد التطوير">
+  <title>KAZE — Wear what feels like you</title>
+  <link rel="icon" href="assets/images/logo-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <script src="assets/js/utils/i18n.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+  <script type="module" src="assets/js/auth.js"></script>
+</head>
+<body>
+  <div class="demo-strip" role="note"><span class="demo-dot"></span><span data-i18n="demo_notice">تنبيه: دي واجهة تجريبية. لا يوجد دفع أو تسجيل أو إرسال طلبات حقيقي.</span></div>
+  <div class="announcement"><span data-i18n="promo">توصيل تجريبي — بيانات المتجر والأسعار المعروضة للتجربة فقط</span><span class="announcement-mark">KAZE / STUDIO</span></div>
+  <header class="site-header">
+    <div class="header-main container">
+      <a class="brand" href="#home" aria-label="KAZE home"><img src="assets/images/logo-mark.svg" alt="" width="42" height="42"><span>KAZE<span class="brand-dot">.</span></span></a>
+      <form class="search-box" id="searchForm" role="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.2 4.2"></path></svg>
+        <input id="searchInput" type="search" data-i18n-placeholder="search_placeholder" placeholder="دوّر على قطعة بتحبها..." autocomplete="off" aria-label="Search products">
+        <kbd>/</kbd>
+      </form>
+      <div class="header-actions">
+        <button class="icon-button theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme" title="Toggle theme"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5 8.7 8.7 0 1 0 20.5 14.2Z"></path></svg></button>
+        <button class="icon-button account-trigger" id="accountButton" type="button" aria-label="Account"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4.5 21a7.5 7.5 0 0 1 15 0"></path></svg><span class="action-label" id="accountButtonLabel" data-i18n="auth_sign_in">دخول</span></button>
+        <button class="icon-button language-toggle" id="languageToggle" type="button" aria-label="Change language"><span data-i18n="language">English</span></button>
+        <button class="icon-button count-button" id="favoritesButton" type="button" aria-label="Favorites"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 8.8c0 5.2-8.4 10.3-8.4 10.3S3.6 14 3.6 8.8A4.4 4.4 0 0 1 12 6.7a4.4 4.4 0 0 1 8.4 2.1Z"></path></svg><span class="count-badge" id="favoriteCount">0</span><span class="action-label" data-i18n="favorites">المفضلة</span></button>
+        <button class="icon-button count-button cart-trigger" id="cartButton" type="button" aria-label="Cart"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.2 11.1a2 2 0 0 0 2 1.6h8.4a2 2 0 0 0 2-1.6L21 8H6"></path><circle cx="10" cy="20" r="1"></circle><circle cx="18" cy="20" r="1"></circle></svg><span class="count-badge" id="cartCount">0</span><span class="action-label" data-i18n="cart">السلة</span></button>
+      </div>
+    </div>
+    <nav class="main-nav container" aria-label="Main navigation">
+      <a class="nav-link active" href="#home" data-i18n="nav_home">الرئيسية</a>
+      <a class="nav-link" href="#shop" data-i18n="nav_shop">تسوق</a>
+      <a class="nav-link" href="#categories" data-i18n="nav_new">وصل حديثًا</a>
+      <a class="nav-link nav-sale" href="#edit" data-i18n="nav_sale">العروض</a>
+      <span class="nav-spacer"></span><span class="nav-caption">MODERN ESSENTIALS · 2026</span>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero container" aria-labelledby="heroTitle">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="eyebrow-line"></span><span data-i18n="hero_eyebrow">ستايلك على مزاجك</span></span>
+        <h1 id="heroTitle" data-i18n="hero_title">البس اللي يشبهك.</h1>
+        <p data-i18n="hero_description">قطع يومية بتفاصيل بسيطة، وألوان تعيش معاك من أول اليوم لآخره. اكتشف تشكيلة KAZE التجريبية.</p>
+        <div class="hero-buttons"><a class="button button-dark" href="#shop"><span data-i18n="shop_now">اكتشف التشكيلة</span><span class="button-arrow" aria-hidden="true">↗</span></a><a class="text-link" href="#categories"><span data-i18n="explore_categories">اختار ستايلك</span><span aria-hidden="true"> ↓</span></a></div>
+        <div class="hero-bottom-note"><span class="note-stars" aria-hidden="true">✳</span><span data-i18n="details_demo">تفاصيل توضيحية</span><span class="note-separator"></span><span>01 / 03</span></div>
+      </div>
+      <div class="hero-art"><img src="assets/images/hero-fashion.svg" alt="رسمة توضيحية لقطع ملابس من KAZE" fetchpriority="high"><div class="floating-label label-top"><span class="label-dot"></span> EVERYDAY / EVERYWHERE</div><div class="floating-label label-bottom"><span class="label-number">01</span><span>THE NEW<br>ESSENTIALS</span></div></div>
+    </section>
+
+    <section class="category-section section-space container" id="categories">
+      <div class="section-heading"><div><span class="section-kicker">01 — KAZE EDIT</span><h2 data-i18n="explore_categories">اختار ستايلك</h2><p data-i18n="categories_desc">أساسيات تقدر تبني عليها إطلالتك بطريقتك.</p></div><a class="simple-link" href="#shop"><span data-i18n="all_products">كل المنتجات</span><span aria-hidden="true"> ↗</span></a></div>
+      <div class="category-grid">
+        <button class="category-card category-tees" type="button" data-category="tees"><span class="category-image"><img src="assets/images/tee.svg" alt="" loading="lazy"></span><span class="category-card-foot"><span data-i18n="cat_tees">تيشيرتات</span><span>↗</span></span></button>
+        <button class="category-card category-pants" type="button" data-category="pants"><span class="category-image"><img src="assets/images/pants.svg" alt="" loading="lazy"></span><span class="category-card-foot"><span data-i18n="cat_pants">بناطيل وجينز</span><span>↗</span></span></button>
+        <button class="category-card category-sports" type="button" data-category="sports"><span class="category-image"><img src="assets/images/sport.svg" alt="" loading="lazy"></span><span class="category-card-foot"><span data-i18n="cat_sports">ملابس رياضية</span><span>↗</span></span></button>
+        <button class="category-card category-hoodies" type="button" data-category="hoodies"><span class="category-image"><img src="assets/images/hoodie.svg" alt="" loading="lazy"></span><span class="category-card-foot"><span data-i18n="cat_hoodies">هوديز</span><span>↗</span></span></button>
+      </div>
+    </section>
+
+    <section class="shop-section section-space" id="shop">
+      <div class="container">
+        <div class="section-heading shop-heading"><div><span class="section-kicker">02 — THE COLLECTION</span><h2 data-i18n="featured">اختيارات KAZE</h2><p data-i18n="featured_desc">تشكيلة تجريبية لعرض شكل المنتجات والتصفح.</p></div><span class="collection-stamp">K / 26</span></div>
+        <div class="filter-toolbar" aria-label="Product filters">
+          <div class="filter-categories" id="categoryFilters"><button type="button" class="filter-chip active" data-filter-category="all" data-i18n="filter_all">الكل</button><button type="button" class="filter-chip" data-filter-category="tees" data-i18n="cat_tees">تيشيرتات</button><button type="button" class="filter-chip" data-filter-category="pants" data-i18n="cat_pants">بناطيل وجينز</button><button type="button" class="filter-chip" data-filter-category="sports" data-i18n="cat_sports">ملابس رياضية</button><button type="button" class="filter-chip" data-filter-category="hoodies" data-i18n="cat_hoodies">هوديز</button></div>
+          <div class="filter-controls">
+            <label class="sr-only" for="sizeFilter" data-i18n="filter_size">المقاس</label><select id="sizeFilter"><option value="all" data-i18n="filter_size_all">كل المقاسات</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option></select>
+            <label class="sr-only" for="colorFilter" data-i18n="filter_color">اللون</label><select id="colorFilter"><option value="all" data-i18n="filter_color_all">كل الألوان</option><option value="black" data-i18n="color_black">أسود</option><option value="white" data-i18n="color_white">أبيض</option><option value="green" data-i18n="color_green">أخضر فاتح</option><option value="beige" data-i18n="color_beige">بيج</option><option value="navy" data-i18n="color_navy">كحلي</option><option value="grey" data-i18n="color_grey">رمادي</option></select>
+            <label class="sr-only" for="sortFilter" data-i18n="filter_sort">ترتيب حسب</label><select id="sortFilter"><option value="featured" data-i18n="sort_featured">المقترحة</option><option value="newest" data-i18n="sort_newest">الأحدث</option><option value="low" data-i18n="sort_low">السعر: من الأقل للأعلى</option><option value="high" data-i18n="sort_high">السعر: من الأعلى للأقل</option><option value="name" data-i18n="sort_name">الاسم</option></select>
+          </div>
+          <div class="price-range"><label for="priceFilter"><span data-i18n="price_limit">أقصى سعر</span> <strong id="priceValue">1500 ج.م</strong></label><input id="priceFilter" type="range" min="100" max="1500" step="50" value="1500"></div>
+        </div>
+        <div class="results-line"><span><strong id="resultCount">6</strong> <span data-i18n="results">نتيجة</span></span><button id="clearFilters" class="clear-filters" type="button" data-i18n="clear_filters">مسح الفلاتر</button></div>
+        <div class="product-grid" id="productGrid" aria-live="polite"></div>
+        <div class="empty-state hidden" id="emptyState"><span class="empty-icon">⌕</span><h3 data-i18n="empty_results">مفيش منتجات مطابقة للبحث.</h3><p data-i18n="empty_results_hint">جرّب تغيّر الفلاتر أو كلمة البحث.</p><button class="button button-dark" id="resetEmpty" type="button" data-i18n="clear_filters">مسح الفلاتر</button></div>
+      </div>
+    </section>
+
+    <section class="editorial-banner container section-space" id="edit"><div class="editorial-copy"><span class="section-kicker">03 — LESS, BUT BETTER</span><h2 data-i18n="promo_title">الأساسيات، بس بروح مختلفة.</h2><p data-i18n="promo_desc">ستايل بسيط ومساحة أكبر للتعبير عن نفسك.</p><a class="button button-light" href="#shop"><span data-i18n="promo_cta">تصفح الاختيارات</span><span class="button-arrow" aria-hidden="true">↗</span></a></div><div class="editorial-art"><div class="art-ring"></div><img src="assets/images/jacket.svg" alt="" loading="lazy"><span class="editorial-side-note">DESIGNED FOR<br>REAL LIFE</span><span class="editorial-index">KAZE / 003</span></div></section>
+
+    <section class="benefits container section-space"><article class="benefit"><span class="benefit-icon">✳</span><div><h3 data-i18n="benefit_1_title">اختيارات واضحة</h3><p data-i18n="benefit_1_desc">تفاصيل المنتج والمقاس واللون في مكان واحد.</p></div></article><article class="benefit"><span class="benefit-icon">↗</span><div><h3 data-i18n="benefit_2_title">تجربة بسيطة</h3><p data-i18n="benefit_2_desc">تصفح سريع ومريح على الموبايل والكمبيوتر.</p></div></article><article class="benefit"><span class="benefit-icon">◌</span><div><h3 data-i18n="benefit_3_title">بيانات توضيحية</h3><p data-i18n="benefit_3_desc">المنتجات والأسعار هنا أمثلة وليست عروض بيع حقيقية.</p></div></article></section>
+
+    <section class="newsletter container"><div class="newsletter-icon">K.</div><div class="newsletter-copy"><h2 data-i18n="newsletter_title">خليك قريب من الجديد</h2><p data-i18n="newsletter_desc">قسم تجريبي فقط، مش بيجمع بريدك الإلكتروني حاليًا.</p></div><form id="newsletterForm" class="newsletter-form"><input type="email" data-i18n-placeholder="newsletter_placeholder" placeholder="بريدك الإلكتروني" aria-label="Email" disabled><button type="button" disabled data-i18n="newsletter_button">قريبًا</button></form></section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-main"><div class="footer-brand-col"><a class="brand footer-brand" href="#home"><img src="assets/images/logo-mark.svg" alt="" width="42" height="42"><span>KAZE<span class="brand-dot">.</span></span></a><p data-i18n="footer_about">ملابس بتفاصيل بسيطة وذوق واضح.</p><span class="footer-note">EVERYDAY / EVERYWHERE</span></div><div class="footer-col"><h3 data-i18n="footer_shop">تسوق</h3><a href="#categories" data-i18n="cat_tees">تيشيرتات</a><a href="#categories" data-i18n="cat_pants">بناطيل وجينز</a><a href="#categories" data-i18n="cat_sports">ملابس رياضية</a></div><div class="footer-col"><h3 data-i18n="footer_help">مساعدة</h3><a href="#" data-footer-note="shipping" data-i18n="footer_shipping">الشحن والتوصيل</a><a href="#" data-footer-note="returns" data-i18n="footer_returns">الاستبدال والاسترجاع</a><a href="#" data-footer-note="privacy" data-i18n="footer_privacy">الخصوصية</a><a href="#" data-footer-note="terms" data-i18n="footer_terms">الشروط والأحكام</a></div><div class="footer-col"><h3 data-i18n="footer_contact">التواصل</h3><p class="footer-contact-note" data-i18n="footer_contact_note">بيانات التواصل الفعلية هتتضاف قبل الإطلاق.</p><button class="footer-lang" type="button" id="footerLanguage"><span data-i18n="language">English</span> ↗</button></div></div><div class="container footer-bottom"><span data-i18n="copyright">© 2026 KAZE. واجهة تجريبية قيد التطوير.</span><span>MADE TO MOVE WITH YOU <b>✳</b></span></div></footer>
+
+  <div class="modal-layer hidden" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <section class="auth-modal" aria-describedby="authStatus">
+      <button class="close-button auth-close" type="button" id="closeAuth" aria-label="Close">×</button>
+      <span class="section-kicker">KAZE ACCOUNT</span>
+      <h2 id="authTitle" data-i18n="auth_login_title">تسجيل الدخول</h2>
+      <p class="auth-status" id="authStatus" role="status" aria-live="polite" data-i18n="auth_signed_out_hint">سجّل دخولك عشان تستخدم حسابك.</p>
+      <div id="authFormArea">
+        <form id="authForm" class="auth-form">
+          <div id="authNameField" hidden><label for="authName" data-i18n="auth_name_label">الاسم</label><input id="authName" name="name" type="text" autocomplete="name" maxlength="80" minlength="2"></div>
+          <div><label for="authEmail" data-i18n="auth_email_label">البريد الإلكتروني</label><input id="authEmail" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="name@example.com"></div>
+          <div id="authPasswordField"><label for="authPassword" data-i18n="auth_password_label">كلمة المرور</label><input id="authPassword" name="password" type="password" autocomplete="current-password" minlength="6" required></div>
+          <div id="authConfirmField" hidden><label for="authPasswordConfirm" data-i18n="auth_password_confirm">تأكيد كلمة المرور</label><input id="authPasswordConfirm" name="passwordConfirm" type="password" autocomplete="new-password" minlength="6"></div>
+          <button class="button button-dark button-full" type="submit" id="authSubmitButton" data-i18n="auth_login">دخول</button>
+        </form>
+        <div class="auth-actions"><button class="auth-text-button" type="button" id="authModeToggle" data-i18n="auth_need_account">إنشاء حساب جديد</button><button class="auth-text-button" type="button" id="authResetButton" data-i18n="auth_forgot_password">نسيت كلمة المرور؟</button></div>
+        <div class="auth-separator"><span data-i18n="auth_or">أو</span></div>
+        <button class="button auth-google-button button-full" type="button" id="googleSignInButton"><span aria-hidden="true">G</span><span data-i18n="auth_google">المتابعة باستخدام Google</span></button>
+      </div>
+      <div class="auth-account-details" id="authAccountDetails" hidden>
+        <div class="auth-profile-avatar" aria-hidden="true">K.</div>
+        <h3 id="authUserName">KAZE customer</h3>
+        <p id="authUserEmail"></p>
+        <p id="authProfileState" class="auth-profile-state" data-i18n="auth_profile_backend_pending">ملف الحساب على قاعدة البيانات لم يُختبر بعد.</p>
+        <button class="button auth-google-button button-full" type="button" id="authSecurityTestButton" data-i18n="auth_run_security_test">اختبار صلاحيات الحساب</button>
+        <pre id="authSecurityTestResult" class="auth-test-result hidden" hidden aria-live="polite"></pre>
+        <button class="button button-dark button-full" type="button" id="authSignOutButton" data-i18n="auth_sign_out">تسجيل الخروج</button>
+      </div>
+      <p class="auth-privacy-note" data-i18n="auth_privacy_note">كلمة المرور لا تُخزن في قاعدة بيانات KAZE؛ تتولى Firebase المصادقة.</p>
+    </section>
+  </div>
+
+  <div class="overlay hidden" id="overlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-labelledby="cartTitle"><div class="drawer-head"><div><span class="section-kicker">YOUR SELECTION</span><h2 id="cartTitle" data-i18n="cart_title">سلة التجربة</h2></div><button class="close-button" type="button" id="closeCart" aria-label="Close cart">×</button></div><div class="drawer-body" id="cartItems"></div><div class="drawer-foot"><div class="cart-total"><span data-i18n="cart_total">الإجمالي التجريبي</span><strong id="cartTotal">0 ج.م</strong></div><p data-i18n="demo_cart_note">السلة دي للتجربة فقط؛ مش هيتبعت منها أي طلب.</p><button type="button" id="continueShopping" class="button button-dark button-full" data-i18n="continue_shopping">كمل تصفح</button></div></aside>
+
+  <div class="modal-layer hidden" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalProductName"><div class="product-modal"><button class="close-button modal-close" type="button" id="closeModal" aria-label="Close">×</button><div id="modalContent"></div></div></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
